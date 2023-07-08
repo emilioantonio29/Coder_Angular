@@ -1,1 +1,89 @@
-<app-main-wrapper></app-main-wrapper>
+<!-- INTERPOLACION -->
+<p>{{title}}</p>
+<p class="success" style="color: white">{{number}}</p>
+
+<br>
+<br>
+<!-- DIRECTIVAS DE ATRIBUTOS ngClass -->
+<p [ngClass]="number > 10 ? 'error' : 'success'" style="color: white">{{number}}</p>
+<p [ngClass]="{success: number > 0, 'error': number === 5}" style="color: white">{{number}}</p> <!-- Con Objetos -->
+<!-- DIRECTIVAS DE ATRIBUTOS ngStyle -->
+<div [ngStyle]="{'height':myFontSize}" style="border: 1px solid black">
+    <p>directiva ngStyle</p>
+</div>
+
+<br>
+<br>
+<!-- DIRECTIVAS PERSONALIZADAS ng g d roundedBlock | [appRoundedBlock]="10" envia argumentos a la directiva -->
+<div [ngStyle]="{'height':myFontSize}" style="border: 1px solid black">
+    <p>directivas personalizadas</p>
+</div>
+<p appRoundedBlock style="height: 50px">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Id molestias, modi quod consectetur dolores, dignissimos praesentium magnam quia recusandae cum distinctio 
+    a tempore repudiandae dolorum amet porro beatae dolor necessitatibus!
+</p>
+
+<br>
+<br>
+<!-- DIRECTIVAS ESTRUCTURALES *ngFor -->
+<ul>
+    <li *ngFor="let alumno of ['Zun', 'Emi', 'Jimmy']; let i = index">
+        {{i+1}} - {{alumno}}
+    </li>
+</ul>
+
+<br>
+<br>
+<!-- DIRECTIVAS CONDICIONALES *ngIf -->
+<p *ngIf="hayError" class="error">ocurrio un error</p>
+<p *ngIf="!hayError" class="success">no hay error</p>
+<p *ngIf="!hayError; else templateOK" class="success">no hay error</p>
+<ng-template #templateOK>
+    <p>TODO OK</p>
+</ng-template>
+<!-- BINDING -->
+<button (click)="hayError = !hayError">cambiar estado</button>
+<button (click)="changeError()">cambiar estado</button>
+<div (mouseover)="changeError()" style="border: 1px solid red; width: 100px;">cambiar estado mouseover</div>
+<button (click)="onClick($event)">Obtener Evento HTML</button>
+<input (keyup)="onInputChange($event)" type="text"/>
+<p>{{value}}</p>
+
+<!-- DIRECTIVAS CONDICIONALES *ngSwift -->
+<div [ngSwitch]="status">
+    <div *ngSwitchCase="1">
+        Estado1
+    </div>
+    <div *ngSwitchCase="2">
+        Estado2
+    </div>
+    <div *ngSwitchDefault="">
+        No es valido
+    </div>
+</div>
+
+<br>
+<br>
+<!-- TWO WAY BINDING -->
+<!-- ngModel: para trabajar con la directiva de formularios hay importarlo en el modulo -->
+<!-- 
+    [] = significa que vamos a pasar data del padre al hijo 
+    [] = significa que vamos a pasar data del hijo al padre
+    [()] = significa que hay un enlacamiento de doble via, el padre envia data al hijo y el hijo puede modificar propiedades del padre
+-->
+<form>
+    <input [(ngModel)]="usuario.name" type="text" placeholder="name" name="name"/>
+    <input [(ngModel)]="usuario.lastname" type="text" placeholder="lastname" name="lastname"/>
+    <button (click)="onSave()">Guardar</button>
+</form>
+
+
+<!-- Filtros de vista | Pipes: -->
+
+<h2>Filtros de vista | Pipes</h2>
+<br>
+<p>{{birthday | date: 'short'}}</p>
+<p>{{birthday | date: 'dd-mm-yyyy'}}</p>
+<p>{{price}} - {{price | currency}}</p>
+<p>{{'hola mundo' | uppercase}}</p>
+<p>{{'HOLA MUNDO' | lowercase}}</p>

@@ -3,3 +3,11 @@ p{
     color: blue; 
     font-weight: bold;
 }
+
+.success{
+    background-color: green;
+}
+
+.error{
+    background-color: red;
+}
