@@ -1,0 +1,25 @@
+<br>
+<br>
+<h1 style="text-align:center">Student List</h1>
+<div style="padding: 3vh">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{student.name | uppercase}}</td>
+            <td>{{student.lastname | uppercase}}</td>
+            <td style="font-weight: bold;" [ngClass]="student.grade > 5  ? 'text-success': 'text-warning'">
+              {{student.grade}}
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
