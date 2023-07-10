@@ -1,0 +1,26 @@
+<div style="padding: 3vh">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of studentList; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td (click)="onSelect.emit(student.name)">{{student.name | uppercase}}</td>
+            <td>{{student.lastname | uppercase}}</td>
+            <td style="font-weight: bold;" [ngClass]="student.grade > 5  ? 'text-success': 'text-warning'">
+              {{student.grade}}
+            </td>
+            <!-- <td><button (click)="removeStudent(i)" class="btn btn-primary">Delete</button></td> -->
+            <td><button (click)="removeStudentParent(i)" 
+              class="btn btn-primary">Delete</button></td>
+          </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,15 @@
+<br>
+<br>
+<h1 style="text-align:center">Student List</h1>
+<app-selectable-list 
+    [(studentList)]="students" 
+    (onSelect)="alertUser($event)"
+>
+</app-selectable-list>
+
+<h1 style="text-align:center">Cantidad de estudiantes (Parent): {{students.length}}</h1>
+
+<br>
+<br>
+
+<h1 style="text-align:center" #viewChildExample>ViewChild Decorator example</h1>
