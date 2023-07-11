@@ -1,4 +1,6 @@
-export const characters = [{
+import { Character } from "../models/characters.model";
+
+export const characters: Character[] = [{
     "id": 1,
     "name": "Rick Sanchez",
     "status": "Alive",

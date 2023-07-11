@@ -1,0 +1,15 @@
+<div class="row gy-4">
+    <div *ngFor="let character of characters; let i = index" class="col-4">
+        <app-card
+            [clickable]="character.status ==='Alive' ? true : false"
+            [title]="character.name"
+            [img]="character.image"
+            [severity]="
+                character.status ==='Alive' ? 'text-bg-success' 
+                : character.status ==='unknown' ? 'text-bg-warning'
+                : character.status ==='Dead' ? 'text-bg-danger' : ''" 
+            (onClick)="onClickCard(character)"
+        >
+        </app-card>
+    </div>
+</div>
