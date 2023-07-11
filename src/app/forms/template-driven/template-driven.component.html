@@ -1,0 +1,95 @@
+<div class="container bg-light p-5">
+    <h4 style="text-align: center;">TEMPLATE DRIVEN</h4>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input 
+                    required
+                    [(ngModel)]="userModel.email" 
+                    type="email" 
+                    class="form-control" 
+                    id="inputEmail4"
+                    placeholder="Email" name="email"
+                >
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input 
+                    required
+                    [(ngModel)]="userModel.password" 
+                    name="password" 
+                    type="password" 
+                    class="form-control" 
+                    id="inputPassword4" 
+                    placeholder="Password"
+                >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input 
+                [(ngModel)]="userModel.addresses[0].address" 
+                name="address" 
+                type="text" 
+                class="form-control" 
+                id="inputAddress" 
+                placeholder="1234 Main St"
+            >
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input 
+                [(ngModel)]="userModel.addresses[1].address" 
+                name="address" 
+                type="text" 
+                class="form-control" 
+                id="inputAddress2" 
+                placeholder="Apartment, studio, or floor"
+            >
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input 
+                    [(ngModel)]="userModel.city" 
+                    type="text" 
+                    class="form-control" 
+                    id="inputCity"
+                    name="city"
+                >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select [(ngModel)]="userModel.state" name="state" id="inputState" class="form-control">
+                    <option style="display: none">--Choose--</option>
+                    <option>Option1</option>
+                    <option>Option2</option>
+                    <option>Option3</option>
+                    <option>Option4</option>
+                    <option>Option5</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input [(ngModel)]="userModel.zip" name="zip" type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input required [(ngModel)]="userModel.check" name="check" class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Acepto los términos y condiciones
+                </label>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button (click)="onSubmit()" type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <h4 style="text-align: center;">MODEL VALUES</h4>
+    <pre>{{userModel | json}}</pre>
+</div>
