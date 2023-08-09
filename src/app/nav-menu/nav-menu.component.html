@@ -5,7 +5,8 @@
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']" style="font-size: larger; font-weight: bold; color: gold">
         <!-- <img [src]="imagenruta" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-        <img src="https://style.shockvisual.net/wp-content/uploads/2020/02/Logo_CaballerosZodiaco_Bandai.png" width="90" height="40" class="d-inline-block align-top" alt="">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e33a74bd-4e72-43a5-bf30-bca37c46b71e/dck9aa8-a3ca6f7e-2a2d-4297-88b1-eefc8294f7bc.png/v1/fill/w_1177,h_679/los_caballeros_del_zodiaco___logo_by_catmoon_sidt_dck9aa8-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzM5IiwicGF0aCI6IlwvZlwvZTMzYTc0YmQtNGU3Mi00M2E1LWJmMzAtYmNhMzdjNDZiNzFlXC9kY2s5YWE4LWEzY2E2ZjdlLTJhMmQtNDI5Ny04OGIxLWVlZmM4Mjk0ZjdiYy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.mG5hjSARIkmIm_StUid8-96365_G7Yrd8kYfgUUz4io" 
+          width="80" height="30" class="d-inline-block align-top" alt="">
         Saint Seiya
       </a>
       <button
@@ -34,6 +35,21 @@
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/caballeros']" 
               >Listado de Caballeros</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/caballeros-crear']"
+              >Registro de Caballeros</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/caballeros/1000']"
+              >Detalle</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/caballeros-busqueda']"
+              >Busqueda Avanzada</a
             >
           </li>
         </ul>

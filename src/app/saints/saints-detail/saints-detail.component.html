@@ -42,7 +42,7 @@
 <div *ngIf="caballero.id!==-1">
     <div class="card text-center">
         <div class="card-header">
-          <br>
+            <button class="btn btn-primary" (click)="Show()">Editar Caballero</button>
         </div>
         <div class="card-body" *ngIf="show">
             <form [formGroup]="formCaballero" (ngSubmit)="EditarCaballero()" autocomplete="off">
